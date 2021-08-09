@@ -6,7 +6,7 @@ import os.path
 from pathlib import Path
 from shutil import copyfile
 
-ver = '2.0'
+ver = '2.1'
 
 class HomePage:
     def __init__(self, root):
@@ -699,7 +699,7 @@ class root_page:
         GLabel_578.configure(foreground="#00a3ff")
         GLabel_578["justify"] = "center"
         GLabel_578["text"] = "Rooting"
-        GLabel_578.place(x=0, y=20, width=900, height=79)
+        GLabel_578.place(x=0, y=20, width=900, height=90)
 
         GLabel_885 = tk.Label(root)
         ft = tkFont.Font(family='Georgia', size=10)
@@ -769,6 +769,16 @@ class root_page:
         GButton_973["text"] = "C23"
         GButton_973.place(x=600, y=270, width=120, height=25)
         GButton_973["command"] = self.GButton_973_command
+
+        C24BUTTON = tk.Button(root)
+        C24BUTTON["bg"] = "#00a3ff"
+        ft = tkFont.Font(family='Georgia', size=10)
+        C24BUTTON["font"] = ft
+        C24BUTTON["fg"] = "#131313"
+        C24BUTTON["justify"] = "center"
+        C24BUTTON["text"] = "C24"
+        C24BUTTON.place(x=200, y=330, width=120, height=25)
+        C24BUTTON["command"] = self.C24BUTTON_command
 
         GButton_253 = tk.Button(root)
         GButton_253["bg"] = "#00a3ff"
@@ -980,7 +990,42 @@ class root_page:
             os.system('cmd /c "PAUSE"')
             flasher("C:/flashtool/vbmeta/a11.img","C:/flashtool/root/c23/patched_c23.img", "a11.img", "patched_c23.img")
 
+    # C24
+    def C24BUTTON_command(self):
 
+            if not os.path.isfile('C:/flashtool/root/c24/patched_c24.img') and not os.path.isfile(
+                    'C:/flashtool/vbmeta/a11.img'):
+                Path("C:/flashtool/root/c24").mkdir(parents=True, exist_ok=True)
+                Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
+                os.system(
+                    'cmd /c "cd C:/flashtool/root/c24/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/patched_c24.img"')
+                os.system(
+                    'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+                os.system('cmd /c "PAUSE"')
+                flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c24/patched_c24.img", "a11.img",
+                        "patched_c24.img")
+
+            elif not os.path.isfile('C:/flashtool/root/c24/patched_c24.img'):
+                Path("C:/flashtool/root/c24").mkdir(parents=True, exist_ok=True)
+                os.system(
+                    'cmd /c "cd C:/flashtool/root/c24/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/patched_c24.img"')
+                os.system('cmd /c "PAUSE"')
+                flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c24/patched_c24.img", "a11.img",
+                        "patched_c24.img")
+
+            elif not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
+                Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
+                os.system(
+                    'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+                os.system('cmd /c "PAUSE"')
+                flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c24/patched_c24.img", "a11.img",
+                        "patched_c24.img")
+
+            else:
+                subprocess.call([r'C:/flashtool/bin/already_downloaded.bat'])
+                os.system('cmd /c "PAUSE"')
+                flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c24/patched_c24.img", "a11.img",
+                        "patched_c24.img")
 
     # go back
     def GButton_253_command(self):
