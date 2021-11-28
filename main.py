@@ -6,7 +6,7 @@ import os.path
 from pathlib import Path
 from shutil import copyfile
 
-ver = '2.4'
+ver = '2.5'
 
 class HomePage:
     def __init__(self, root):
@@ -153,6 +153,8 @@ class HomePage:
         TKButton_886["command"] = self.TKButton_886_command
 
 
+
+
         TKButton_253 = tk.Button(root)
         TKButton_253["bg"] = "#ffd700"
         ft = tkFont.Font(family='Ubuntu', size=10)
@@ -213,6 +215,8 @@ class HomePage:
     def TKButton_973_command(self):
         clear_frame()
         app = boot(root)
+
+
 
     # Reboot
     def TKButton_886_command(self):
@@ -787,28 +791,23 @@ class boot:
     #C25
     def TKButton_449_command(self):
 
-        if not os.path.isfile('C:/flashtool/boot/c25/boot_c25.img') and not os.path.isfile(
-                'C:/flashtool/vbmeta/a11.img'):
+        if not os.path.isfile('C:/flashtool/boot/c25/boot_c25.img') and not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
             Path("C:/flashtool/boot/c25").mkdir(parents=True, exist_ok=True)
             Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
-            os.system(
-                'cmd /c "cd C:/flashtool/boot/c25/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download1323.mediafire.com/7eed1gngo0ag/74z724jprs5bq6p/boot_c25.img"')
-            os.system(
-                'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+            os.system('cmd /c "cd C:/flashtool/boot/c25/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://iweb.dl.sourceforge.net/project/ofoxrecovery/boot_c25.img"')
+            os.system('cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/boot/c25/boot_c25.img", "a11.img",
                     "boot_c25.img")
 
         elif not os.path.isfile('C:/flashtool/boot/c25/boot_c25.img'):
             Path("C:/flashtool/boot/c25").mkdir(parents=True, exist_ok=True)
-            os.system(
-                'cmd /c "cd C:/flashtool/boot/c25/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download1323.mediafire.com/7eed1gngo0ag/74z724jprs5bq6p/boot_c25.img"')
+            os.system('cmd /c "cd C:/flashtool/boot/c25/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://iweb.dl.sourceforge.net/project/ofoxrecovery/boot_c25.img"')
             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/boot/c25/boot_c25.img", "a11.img",
                     "boot_c25.img")
 
         elif not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
             Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
-            os.system(
-                'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+            os.system('cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/boot/c25/boot_c25.img", "a11.img",
                     "boot_c25.img")
 
@@ -824,7 +823,7 @@ class boot:
         if not os.path.isfile('C:/flashtool/boot/c26/boot_c26.img') and not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
                Path("C:/flashtool/boot/c26").mkdir(parents=True, exist_ok=True)
                Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
-               os.system('cmd /c "cd C:/flashtool/boot/c26/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download1348.mediafire.com/paibesgfqxeg/ovnscbe8dyy4cb7/boot_c26.img"')
+               os.system('cmd /c "cd C:/flashtool/boot/c26/ && C:/flashtool/bin/curl/bin/curl.exe -L -k -O https://master.dl.sourceforge.net/project/ofoxrecovery/boot_c26.img"')
                os.system('cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
                flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/boot/c26/boot_c26.img", "a11.img",
                             "boot_c26.img")
@@ -832,7 +831,7 @@ class boot:
         elif not os.path.isfile('C:/flashtool/boot/c26/boot_c26.img'):
                     Path("C:/flashtool/boot/c26").mkdir(parents=True, exist_ok=True)
                     os.system(
-                        'cmd /c "cd C:/flashtool/boot/c26/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download1348.mediafire.com/paibesgfqxeg/ovnscbe8dyy4cb7/boot_c26.img"')
+                        'cmd /c "cd C:/flashtool/boot/c26/ && C:/flashtool/bin/curl/bin/curl.exe -L -k -O https://master.dl.sourceforge.net/project/ofoxrecovery/boot_c26.img"')
                     flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/boot/c26/boot_c26.img", "a11.img",
                             "boot_c26.img")
 
@@ -895,7 +894,7 @@ class root_page:
         TKButton_532["fg"] = "#000000"
         TKButton_532["justify"] = "center"
         TKButton_532["text"] = "A37"
-        TKButton_532.place(x=200, y=210, width=120, height=25)
+        TKButton_532.place(x=100, y=210, width=120, height=25)
         TKButton_532["command"] = self.TKButton_532_command
 
         TKButton_537 = tk.Button(root)
@@ -905,7 +904,7 @@ class root_page:
         TKButton_537["fg"] = "#000000"
         TKButton_537["justify"] = "center"
         TKButton_537["text"] = "C20"
-        TKButton_537.place(x=200, y=270, width=120, height=25)
+        TKButton_537.place(x=700, y=210, width=120, height=25)
         TKButton_537["command"] = self.TKButton_537_command
 
         TKButton_207 = tk.Button(root)
@@ -915,7 +914,7 @@ class root_page:
         TKButton_207["fg"] = "#000000"
         TKButton_207["justify"] = "center"
         TKButton_207["text"] = "A39"
-        TKButton_207.place(x=400, y=210, width=120, height=25)
+        TKButton_207.place(x=300, y=210, width=120, height=25)
         TKButton_207["command"] = self.TKButton_207_command
 
         TKButton_297 = tk.Button(root)
@@ -925,7 +924,7 @@ class root_page:
         TKButton_297["fg"] = "#000000"
         TKButton_297["justify"] = "center"
         TKButton_297["text"] = "C22"
-        TKButton_297.place(x=400, y=270, width=120, height=25)
+        TKButton_297.place(x=100, y=270, width=120, height=25)
         TKButton_297["command"] = self.TKButton_297_command
 
         TKButton_942 = tk.Button(root)
@@ -935,7 +934,7 @@ class root_page:
         TKButton_942["fg"] = "#000000"
         TKButton_942["justify"] = "center"
         TKButton_942["text"] = "A41"
-        TKButton_942.place(x=600, y=210, width=120, height=25)
+        TKButton_942.place(x=500, y=210, width=120, height=25)
         TKButton_942["command"] = self.TKButton_942_command
 
         TKButton_973 = tk.Button(root)
@@ -945,7 +944,7 @@ class root_page:
         TKButton_973["fg"] = "#000000"
         TKButton_973["justify"] = "center"
         TKButton_973["text"] = "C23"
-        TKButton_973.place(x=600, y=270, width=120, height=25)
+        TKButton_973.place(x=300, y=270, width=120, height=25)
         TKButton_973["command"] = self.TKButton_973_command
 
         C24BUTTON = tk.Button(root)
@@ -955,7 +954,7 @@ class root_page:
         C24BUTTON["fg"] = "#000000"
         C24BUTTON["justify"] = "center"
         C24BUTTON["text"] = "C24"
-        C24BUTTON.place(x=200, y=330, width=120, height=25)
+        C24BUTTON.place(x=500, y=270, width=120, height=25)
         C24BUTTON["command"] = self.C24BUTTON_command
 
         TKButton_227 = tk.Button(root)
@@ -965,7 +964,7 @@ class root_page:
         TKButton_227["fg"] = "#000000"
         TKButton_227["justify"] = "center"
         TKButton_227["text"] = "C25"
-        TKButton_227.place(x=400, y=330, width=120, height=25)
+        TKButton_227.place(x=700, y=270, width=120, height=25)
         TKButton_227["command"] = self.TKButton_227_command
 
         TKButton_221 = tk.Button(root)
@@ -975,18 +974,31 @@ class root_page:
         TKButton_221["fg"] = "#000000"
         TKButton_221["justify"] = "center"
         TKButton_221["text"] = "C26"
-        TKButton_221.place(x=600, y=330, width=120, height=25)
+        TKButton_221.place(x=100, y=330, width=120, height=25)
         TKButton_221["command"] = self.TKButton_221_command
 
-        TKButton_253 = tk.Button(root)
-        TKButton_253["bg"] = "#ffd700"
+
+        TKButton_238 = tk.Button(root)
+        TKButton_238["bg"] = "#ffd700"
         ft = tkFont.Font(family='Ubuntu', size=10)
-        TKButton_253["font"] = ft
-        TKButton_253["fg"] = "#000000"
-        TKButton_253["justify"] = "center"
-        TKButton_253["text"] = "Go Back"
-        TKButton_253.place(x=710, y=440, width=120, height=25)
-        TKButton_253["command"] = self.TKButton_253_command
+        TKButton_238["font"] = ft
+        TKButton_238["fg"] = "#000000"
+        TKButton_238["justify"] = "center"
+        TKButton_238["text"] = "C27"
+        TKButton_238.place(x=300, y=330, width=120, height=25)
+        TKButton_238["command"] = self.TKButton_238_command
+
+        TKButton_239 = tk.Button(root)
+        TKButton_239["bg"] = "#ffd700"
+        ft = tkFont.Font(family='Ubuntu', size=10)
+        TKButton_239["font"] = ft
+        TKButton_239["fg"] = "#000000"
+        TKButton_239["justify"] = "center"
+        TKButton_239["text"] = "Go Back"
+        TKButton_239.place(x=710, y=440, width=120, height=25)
+        TKButton_239["command"] = self.TKButton_239_command
+
+
 
     # A37
     def TKButton_532_command(self):
@@ -1288,8 +1300,43 @@ class root_page:
         flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c26/patched_c26.img", "a11.img",
                             "patched_c26.img")
 
- # go back
-    def TKButton_253_command(self):
+    # C27
+
+    def TKButton_238_command(self):
+
+         if not os.path.isfile('C:/flashtool/root/c26/patched_c27.img') and not os.path.isfile(
+                 'C:/flashtool/vbmeta/a11.img'):
+             Path("C:/flashtool/root/c27").mkdir(parents=True, exist_ok=True)
+             Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
+             os.system(
+                 'cmd /c "cd C:/flashtool/root/c26/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/patched_c27.img"')
+             os.system(
+                 'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+             os.system('cmd /c "PAUSE"')
+             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c27/patched_c27.img", "a11.img",
+                     "patched_c27.img")
+         elif not os.path.isfile('C:/flashtool/root/c27/patched_c27.img'):
+             Path("C:/flashtool/root/c27").mkdir(parents=True, exist_ok=True)
+             os.system(
+                 'cmd /c "cd C:/flashtool/root/c27/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/patched_c27.img"')
+             os.system('cmd /c "PAUSE"')
+             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c27/patched_c27.img", "a11.img",
+                     "patched_c27.img")
+         elif not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
+             Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
+             os.system(
+                 'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+             os.system('cmd /c "PAUSE"')
+             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c27/patched_c27.img", "a11.img",
+                     "patched_c27.img")
+         else:
+             subprocess.call([r'C:/flashtool/bin/already_downloaded.bat'])
+             os.system('cmd /c "PAUSE"')
+             flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/root/c27/patched_c27.img", "a11.img",
+                     "patched_c27.img")
+
+    # go back
+    def TKButton_239_command(self):
         print("go back")
         clear_frame()
         app = HomePage(root)
@@ -1365,6 +1412,16 @@ class recovery:
         TKButton_555.place(x=650, y=210, width=170, height=25)
         TKButton_555["command"] = self.TKButton_555_command
 
+        TKButton_585 = tk.Button(root)
+        TKButton_585["bg"] = "#ffd700"
+        ft = tkFont.Font(family='Ubuntu', size=10)
+        TKButton_585["font"] = ft
+        TKButton_585["fg"] = "#000000"
+        TKButton_585["justify"] = "center"
+        TKButton_585["text"] = "Android 12 TWRP"
+        TKButton_585.place(x=150, y=270, width=120, height=25)
+        TKButton_585["command"] = self.TKButton_585_command
+
         TKButton_253 = tk.Button(root)
         TKButton_253["bg"] = "#ffd700"
         ft = tkFont.Font(family='Ubuntu', size=10)
@@ -1418,7 +1475,7 @@ class recovery:
                 Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
                 Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
                 os.system('cmd /c "PAUSE"')
-                os.system('cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download947.mediafire.com/57vfmmwbowrg/b4bw7cnt92jj83b/ofox11-v1.img"')
+                os.system('cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://altushost-swe.dl.sourceforge.net/project/ofoxrecovery/ofox11-v1.img"')
                 os.system('cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
                 os.system('cmd /c "PAUSE"')
                 re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/ofox11-v1.img", "a11.img",
@@ -1426,7 +1483,7 @@ class recovery:
      elif not os.path.isfile('C:/flashtool/recovery/ofox11-v1.img'):
                 Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
 
-                os.system('cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download947.mediafire.com/57vfmmwbowrg/b4bw7cnt92jj83b/ofox11-v1.img"')
+                os.system('cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://altushost-swe.dl.sourceforge.net/project/ofoxrecovery/ofox11-v1.img"')
                 os.system('cmd /c "PAUSE"')
                 re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/ofox11-v1.img", "a11.img",
                            "ofox11-v1.img")
@@ -1444,38 +1501,38 @@ class recovery:
 
    #TWRP
     def TKButton_569_command(self):
-     if not os.path.isfile('C:/flashtool/recovery/TWRP-RMX2170-A11.img') and not os.path.isfile(
+     if not os.path.isfile('C:/flashtool/recovery/twrp11.img') and not os.path.isfile(
                     'C:/flashtool/vbmeta/a11.img'):
                 Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
                 Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
                 os.system('cmd /c "PAUSE"')
                 os.system(
-                    'cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://drive.google.com/u/0/uc?export=download&confirm=1-2O&id=13atuPg15cKzmadBcz8x8GKiQL4K8MBC0"')
+                    'cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://liquidtelecom.dl.sourceforge.net/project/ofoxrecovery/twrp11.img"')
                 os.system(
                     'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
                 os.system('cmd /c "PAUSE"')
-                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-RMX2170-A11.img", "a11.img",
-                           "TWRP-RMX2170-A11.img.img")
-     elif not os.path.isfile('C:/flashtool/recovery/TWRP-RMX2170-A11.img'):
+                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/twrp11.img", "a11.img",
+                           "twrp11.img.img")
+     elif not os.path.isfile('C:/flashtool/recovery/twrp11.img'):
                 Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
 
                 os.system(
-                    'cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://drive.google.com/u/0/uc?export=download&confirm=1-2O&id=13atuPg15cKzmadBcz8x8GKiQL4K8MBC0"')
+                    'cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://liquidtelecom.dl.sourceforge.net/project/ofoxrecovery/twrp11.img"')
                 os.system('cmd /c "PAUSE"')
-                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-RMX2170-A11.img", "a11.img",
-                           "TWRP-RMX2170-A11.img")
+                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/twrp11.img", "a11.img",
+                           "twrp11.img")
      elif not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
                 Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
                 os.system(
                     'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
                 os.system('cmd /c "PAUSE"')
-                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-RMX2170-A11.img", "a11.img",
-                           "TWRP-RMX2170-A11.img")
+                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/twrp11.img", "a11.img",
+                           "twrp11.img")
      else:
                 subprocess.call([r'C:/flashtool/bin/already_downloaded.bat'])
                 os.system('cmd /c "PAUSE"')
-                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-RMX2170-A11.img", "a11.img",
-                           "TWRP-RMX2170-A11.img")
+                re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/twrp11.img", "a11.img",
+                           "twrp11.img")
 
     # OFOX c20
     def TKButton_555_command(self):
@@ -1484,14 +1541,14 @@ class recovery:
              Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
              Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
              os.system('cmd /c "PAUSE"')
-             os.system('cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download1082.mediafire.com/11q8hlua3usg/t62waki7lp60o6d/ofox11.img"')
+             os.system('cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://iweb.dl.sourceforge.net/project/ofoxrecovery/ofox11.img"')
              os.system('cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
              os.system('cmd /c "PAUSE"')
              re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/ofox11.img", "a11.img",
                         "ofox11.img")
          elif not os.path.isfile('C:/flashtool/recovery/ofox11.img'):
              Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
-             os.system('cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://download1082.mediafire.com/11q8hlua3usg/t62waki7lp60o6d/ofox11.img"')
+             os.system('cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://iweb.dl.sourceforge.net/project/ofoxrecovery/ofox11.img"')
              os.system('cmd /c "PAUSE"')
              re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/ofox11.img", "a11.img",
                         "ofox11.img")
@@ -1506,6 +1563,42 @@ class recovery:
              os.system('cmd /c "PAUSE"')
              re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/ofox11.img", "a11.img",
                         "ofox11.img")
+
+
+   # OFOX c20
+
+    def TKButton_585_command(self):
+             if not os.path.isfile('C:/flashtool/recovery/TWRP-3.5.2_1112-BETA-RMX2170.img') and not os.path.isfile(
+                     'C:/flashtool/vbmeta/a11.img'):
+                 Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
+                 Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
+                 os.system('cmd /c "PAUSE"')
+                 os.system(
+                     'cmd /c "cd C:/flashtool/recovery/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://master.dl.sourceforge.net/project/ofoxrecovery/TWRP-3.5.2_1112-BETA-RMX2170.img?"')
+                 os.system(
+                     'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+                 os.system('cmd /c "PAUSE"')
+                 re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-3.5.2_1112-BETA-RMX2170.img", "a11.img",
+                            "TWRP-3.5.2_1112-BETA-RMX2170.img")
+             elif not os.path.isfile('C:/flashtool/recovery/TWRP-3.5.2_1112-BETA-RMX2170.img'):
+                 Path("C:/flashtool/recovery").mkdir(parents=True, exist_ok=True)
+                 os.system(
+                     'cmd /c "cd C:/flashtool/recovery && C:/flashtool/bin/curl/bin/curl.exe -L -O https://master.dl.sourceforge.net/project/ofoxrecovery/TWRP-3.5.2_1112-BETA-RMX2170.img"')
+                 os.system('cmd /c "PAUSE"')
+                 re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-3.5.2_1112-BETA-RMX2170.img", "a11.img",
+                            "TWRP-3.5.2_1112-BETA-RMX2170.img")
+             elif not os.path.isfile('C:/flashtool/vbmeta/a11.img'):
+                 Path("C:/flashtool/vbmeta").mkdir(parents=True, exist_ok=True)
+                 os.system(
+                     'cmd /c "cd C:/flashtool/vbmeta/ && C:/flashtool/bin/curl/bin/curl.exe -L -O https://github.com/harshilk/Patched-imgs/raw/main/a11.img"')
+                 os.system('cmd /c "PAUSE"')
+                 re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-3.5.2_1112-BETA-RMX2170.img", "a11.img",
+                            "TWRP-3.5.2_1112-BETA-RMX2170.img")
+             else:
+                 subprocess.call([r'C:/flashtool/bin/already_downloaded.bat'])
+                 os.system('cmd /c "PAUSE"')
+                 re_flasher("C:/flashtool/vbmeta/a11.img", "C:/flashtool/recovery/TWRP-3.5.2_1112-BETA-RMX2170.img", "a11.img",
+                            "TWRP-3.5.2_1112-BETA-RMX2170.img")
 
         #  go back
     def TKButton_253_command(self):
@@ -1748,6 +1841,15 @@ class unlock:
         os.system('cmd /c "@echo off && echo have you approved from deep testing ? if not the do that fisrt then unlock && PAUSE')
         os.system('cmd /c "@echo off && cd C:/flashtool/temp/flash/ && fastboot flashing unlock && echo Unlocking Successful! && PAUSE"')
 
+
+
+
+
+
+
+
+
+
 def flasher(addvb:str, addimg:str, vbname:str, imgname:str):
 
     if os.path.isfile('C:/flashtool/temp/flash/' + str(vbname)) and os.path.isfile('C:/flashtool/temp/flash/' + str(imgname)):
@@ -1784,6 +1886,16 @@ def re_flasher(addvb:str, addimg:str, vbname:str, imgname:str):
                 imgname) + '\nfastboot reboot\nDEL *.img\necho Flashing Successful\nPAUSE')
         f.close()
         subprocess.call([r'C:/flashtool/temp/flash/flash.bat'])
+
+def debloater(pkgname:str):
+    f = open("C:/flashtool/temp/flash/debloat.bat", "w+")
+    f.write('@echo off\ncd C:/flashtool/temp/flash/\nadb devices\nadb shell pm uninstall -k --user 0 ' + str(pkgname) + '\necho Uninstalled Successfully\nPAUSE')
+    f.close()
+    subprocess.call([r'C:/flashtool/temp/flash/debloat.bat'])
+
+
+
+
 
 def clear_frame():
     for widgets in root.winfo_children():
